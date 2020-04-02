@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Portfólio</title>
+		<link href="assets/css/reset.css" rel="stylesheet">
+		<meta charset="utf-8">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/menu.css" rel="stylesheet">
+		<meta name = 'viewport' content = 'width = device-width,initial-scale = 1'> 
+		<link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:700&display=swap" rel="stylesheet">
+		<script src="assets/js/codes.js"></script>
+		<script src="assets/js/index.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	</head>
+	<body>
+			
+		<div class="container">
+			<header class="index-header">
+
+				<img class ="front-img" src='./assets/img/portfolio.png' alt='Portfólio'>
+					<div class="menu-wrap">
+					<input type="checkbox" class="toggler">
+					<div class="hamburger"><div></div></div>
+					<div class="menu">
+					  <div>
+						<div>
+						  <ul class='menu-list'>
+						    {{#each portfolio}}
+								<li class='menu-item'><a href="categoria.html?key={{@key}}">{{this.categoria}}</a></li>
+								
+							{{/each}}
+						  </ul>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				
+				<h1 class="index-title">PORTFÓLIO</h1>
+			</header>
+			
+			<div class="index-content">
+				<p class="index-subtitle">
+					Quer conhecer alguns projetos de engenharia?
+				</p>
+
+				<ul class="index-categories">
+					{{#each portfolio}}
+						<div class="categorie-block">
+							<li><a class="categories-title" href='categoria.html?key={{@key}}'>{{this.categoria}}</a></li>
+							<img class='index-img' src='./assets/img/{{this.imagem}}' alt='{{this.categoria}}'>
+						</div>
+					{{/each}}
+				
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

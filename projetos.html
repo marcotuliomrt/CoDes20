@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>{{projetos}}</title>
+		<link href="assets/css/reset.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/menu.css" rel="stylesheet">
+		<script src="assets/js/codes.js"></script>
+		<script src="assets/js/projetos.js"></script>
+
+
+		<meta charset="utf-8">
+		<meta name = 'viewport' content = 'width = device-width,initial-scale = 1'>
+	</head>
+	<body>
+		<div class="container">
+		
+			<header class="header proj-header-color">
+			
+				<h1 class= 'title'>{{titulo}}</h1>
+				<h2 class='path'>portfolio/categoria/projeto</h2>
+				
+					
+		
+			
+				<div class="menu-wrap">
+				<input type="checkbox" class="toggler">
+				<div class="hamburger"><div></div></div>
+				<div class="menu">
+					<div>
+					<div>
+						<ul class='menu-list'>
+						{{#each portfolio}}
+							<li class='menu-item'><a href="categoria.html?key={{@key}}">{{this.categoria}}</a></li>
+							
+						{{/each}}
+						</ul>
+					</div>
+					</div>
+				</div>
+				</div>
+			
+			</header>
+
+			<div class="proj-content">
+				<img class='proj-img' src='./assets/img/{{imagem}}' alt='{{this.projeto}}'>
+
+				<div class="proj-text-block">
+					
+					<h2 class="proj-subtitle">Descrição</h2>
+					<p class="proj-text descricao"> 
+						{{descricao}}
+					</p>
+					
+					
+					<h2 class="proj-subtitle materiais">Materiais</h2>
+					<p class="proj-text">
+						{{materiais}}
+					</p>
+					
+					
+					<h2 class="proj-subtitle integrantes"> Integrantes</h2>
+					<p class="proj-text"> 
+						{{integrantes}}
+					</p>
+					
+				</div>
+			</p>
+		</div>
+	</body>
+</html>

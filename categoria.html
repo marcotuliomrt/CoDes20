@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>{{categoria}}</title>
+		<link href="assets/css/style.css" rel="stylesheet">
+		<link href="assets/css/reset.css" rel="stylesheet">
+		<link href="assets/css/menu.css" rel="stylesheet">
+		<meta charset="utf-8">
+		<meta name = 'viewport' content = 'width = device-width,initial-scale = 1'>
+		<script src="assets/js/codes.js"></script>
+		<script src="assets/js/categoria.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header class="header cat-header-color">
+				<div class="menu-wrap">
+					<input type="checkbox" class="toggler">
+					<div class="hamburger"><div></div></div>
+					<div class="menu">
+					  <div>
+						<div>
+						  <ul class='menu-list'>
+						    {{#each portfolio}}
+								<li class='menu-item'><a href="categoria.html?key={{@key}}">{{this.categoria}}</a></li>
+								
+							{{/each}}
+						  </ul>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+				<h1 class='title'>{{categoria}}</h1>
+				<h2 class='path'>portfolio/categoria</h2>
+			</header>
+
+			<div class= "cat-content">
+				{{#each projetos}}
+					
+						<a class = 'link' href='projetos.html?key={{@key}}'>
+						<p class= 'cat-name {{@key}}'>{{this.titulo}}</p>
+						</a>
+
+					
+				{{/each}}
+			</div>
+		</div>	
+	</body>
+</html>
